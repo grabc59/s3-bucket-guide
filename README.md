@@ -4,7 +4,7 @@ Getting started with an AWS S3 bucket for website file uploads.
 Christopher Grabski
 2-13-2017
 
-## PURPOSE: Create an Amazon Web Services Simple Storage Service (S3) bucket and configure it into an ExpressJS app in order to upload files to your hosted website. 
+## PURPOSE: Create an Amazon Web Services Simple Storage Service (S3) bucket and configure it into an ExpressJS app in order to upload files to your hosted website.
 
 ## NOTE: Changes made in the AWS console can take a few hours to take effect. You may have created your bucket correctly, but it won’t work for 2-3 hours.
 
@@ -25,7 +25,7 @@ https://devcenter.heroku.com/articles/s3-upload-node
   - Next, click the ***Access Keys (Access Key ID and Secret Access Key)*** dropdown
   - Click ***Create New Access Key***
   - Take note of the Access Key ID and Secret Access Key generated here
-  - You can have up to 3 active access keys at once. Keys that you aren’t using can be deleted so you can create new ones.      Generating a new access key is the only time AWS will tell you your secret access key. If you do not remember the secret access key associated with an access key id, you can delete an unused key id and generate a new one. 
+  - You can have up to 3 active access keys at once. Keys that you aren’t using can be deleted so you can create new ones.      Generating a new access key is the only time AWS will tell you your secret access key. If you do not remember the secret access key associated with an access key id, you can delete an unused key id and generate a new one.
 
 
 
@@ -33,7 +33,7 @@ https://devcenter.heroku.com/articles/s3-upload-node
   - We will create a bucket with permissions allowing anyone to read/write/delete objects.
   - Sign into AWS console
   - Go to ***Services > Storage > S3***
-
+![alt aws menu](images/aws_menu.png)
   - Click ***Create Bucket***, and take note of the name you assign it
     - ALSO, it is suggested you do not use periods, or top level domains (like .com, .net). See here for more info: http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html
   - You can select a region or leave it at the default
@@ -41,7 +41,7 @@ https://devcenter.heroku.com/articles/s3-upload-node
   - Click on your newly created bucket, then click ***Properties***
   - Within the Properties menu, click the ***Permissions*** dropdown
   - Click ***Add more permissions***, select Grantee: Everyone, List, and Upload/Delete as seen below, then click Save
-
+![alt permissions](images/permissions.png)
   - Next, still within the permissions dropdown, click ***Edit CORS Configuration***
   - Paste in the following:
 `<?xml version="1.0" encoding="UTF-8"?>
@@ -56,7 +56,7 @@ https://devcenter.heroku.com/articles/s3-upload-node
         <AllowedHeader>*</AllowedHeader>
     </CORSRule>
 </CORSConfiguration>`
-  - Click ***Save*** on the CORS configuration 
+  - Click ***Save*** on the CORS configuration
   - Click ***Save*** on the permissions dropdown
   - ***Wait 2-3 hours for your changes to take effect***
 
@@ -68,7 +68,7 @@ https://devcenter.heroku.com/articles/s3-upload-node
 Here is an example of using S3 for uploading files in a node project. We will set it up as a proof of concept and as a test that our configurations work. Then the code can be adapted for your specific application.
   - clone https://github.com/flyingsparx/NodeDirectUploader
   - npm install
-  - Npm install -S dotenv 
+  - Npm install -S dotenv
   - Add dotenv as a required package in app.js
   - require('dotenv').config();
   - Add “.env” to your .gitignore
@@ -80,9 +80,9 @@ S3_BUCKET="ZZZZ"`
 
   - ‘Node app.js’ to start the app (the test repo won’t have any console log confirmations that the server is running)
   - Go to http://localhost:3000/account. You should see a page like this:
-
-  - Click the Choose File button and try uploading an image 
+![alt avatar1](images/avatar1.png)
+  - Click the Choose File button and try uploading an image
 If you are successful, the image div will automatically update with the image you uploaded. Congrats your bucket works! Now you can pull in the code in app.js and upload.html into your application as needed.
-
+![alt avatar2](images/avatar2.png)
 If you receive a console error containing “Response for preflight is invalid (redirect)” see http://www.corrspt.com/blog/2016/01/17/uploading-to-amazon-s3-response-for-preflight-is-invalid-redirect-307/
 It may take a few hours for your bucket to be ready for use.
