@@ -56,7 +56,8 @@ https://devcenter.heroku.com/articles/s3-upload-node
         <MaxAgeSeconds>3000</MaxAgeSeconds>
         <AllowedHeader>*</AllowedHeader>
     </CORSRule>
-</CORSConfiguration>```
+</CORSConfiguration>
+```
   - Click ***Save*** on the CORS configuration
   - Click ***Save*** on the permissions dropdown
   - ***Wait 2-3 hours for your changes to take effect***
