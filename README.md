@@ -44,7 +44,8 @@ https://devcenter.heroku.com/articles/s3-upload-node
 ![alt permissions](images/permissions.png)
   - Next, still within the permissions dropdown, click ***Edit CORS Configuration***
   - Paste in the following:
-`<?xml version="1.0" encoding="UTF-8"?>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
     <CORSRule>
         <AllowedOrigin>*</AllowedOrigin>
@@ -55,7 +56,7 @@ https://devcenter.heroku.com/articles/s3-upload-node
         <MaxAgeSeconds>3000</MaxAgeSeconds>
         <AllowedHeader>*</AllowedHeader>
     </CORSRule>
-</CORSConfiguration>`
+</CORSConfiguration>```
   - Click ***Save*** on the CORS configuration
   - Click ***Save*** on the permissions dropdown
   - ***Wait 2-3 hours for your changes to take effect***
