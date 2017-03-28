@@ -76,7 +76,8 @@ Here is an example of using S3 for uploading files in a node project. We will se
   - Add “.env” to your .gitignore
   - Create a file called “.env” in the app’s root directory
   - Add your AWS access key ID, AWS secret access key, and S3 bucket name to .env. See the FINDING ACCESS KEYS section if you don’t know what this is. If deploying to heroku, you’ll add these as heroku config variables. Example .env file:
-```AWS_ACCESS_KEY_ID="XXXX"
+```
+AWS_ACCESS_KEY_ID="XXXX"
 AWS_SECRET_ACCESS_KEY="YYYY"
 S3_BUCKET="ZZZZ"
 ```
